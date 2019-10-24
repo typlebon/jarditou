@@ -1,5 +1,6 @@
 <?php
 //verification de la presence de post signout
+// encore et encore et encore et encore 
 if (isset($_POST['signout'])) {
     $_SESSION["mail"] = array();
     $_SESSION["mdp"] = array();
