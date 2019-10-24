@@ -1,0 +1,200 @@
+/*responsive*/
+html {
+	font-size: 100%;
+}
+
+/*Lien police internet*/
+/*responsive*/
+@font-face {
+	font-family: "Shadeerah";
+	src: url("shadeerah Demo.ttf");
+}
+
+@font-face {
+	font-family: "Radium Corp";
+	src: url("Radium Corp.ttf");
+}
+
+body {
+	background-color: white;
+	font-family: "Shadeerah";
+	position: relative;
+}
+
+/*css pour le header*/
+
+
+blockquote {
+	margin-right: -15px;
+	margin-left: -15px;
+}
+
+/*flexbox*/
+li {
+	display: inline;
+	font-size: 25pt;
+}
+
+a {
+	color: white;
+}
+
+/*Fin nav*/
+
+/*css pour la section*/
+#promotion {
+	border-radius: 50px;
+	max-width: 100%;
+	height: auto;
+}
+
+#joliefleur {
+	border-radius: 50px;
+	max-width: 100%;
+	height: auto;
+}
+
+/*css pour l' article*/
+aside {
+	height: 400px;
+	width: 200px;
+	background-color: white;
+	float: right;
+}
+
+#test2 {
+	height: 850px;
+	width: 610px;
+	background: #F5F5DC;
+}
+
+@media screen and (max-width: 768px) {
+	aside {
+		display: none;
+	}
+}
+
+
+
+@media screen and (max-width: 768px) {
+	h1 {
+		font-size: 40px;
+		color: #E9967A;
+		font-style: italic;
+		font-variant: small-caps;
+	}
+}
+
+p {
+	font-size: 10pt;
+	font-style: italic;
+	padding: 2px;
+	margin: 10px;
+}
+
+h5 {
+	color: #6B8E23;
+	font-size: 28pt;
+	font-variant: small-caps;
+	font-family: Radium Corp;
+	border-bottom: 1px dashed #FFA07A;
+	text-align: center;
+}
+
+.navbar{
+	font-size:15px;
+}
+
+#mot {
+	font-size:15px;
+}
+
+#lapinou {
+	margin-top: -2rem;
+	margin-inline: 1rem;
+}
+
+#carousel-texte {
+	height: 27rem;
+}
+
+/*FORMULAIRE inscription*/
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #ffffff;
+	height: 100vh;
+}
+
+#login .container #login-row #login-column #login-box {
+	margin-top: 120px;
+	max-width: 700px;
+	/*longueur du tableau */
+	height: 840px;
+	border: 1px solid rgb(233, 240, 234);
+	background-color: rgb(164, 192, 175);
+}
+
+#login .container #login-row #login-column #login-box #login-form {
+	padding: 20px;
+}
+
+#login .container #login-row #login-column #login-box #login-form #register-link {
+	margin-top: -85px;
+}
+
+/* FORMULAIRE CONNEXION */
+.btnContactSubmit
+
+/* bouton submit */
+	{
+	width: 50%;
+	border-radius: 1rem;
+	padding: 1.5%;
+	color: #fff;
+	background-color: #adb3b9;
+	border: none;
+	cursor: pointer;
+	margin-right: 6%;
+	background-color: white;
+	color: rgb(44, 44, 56);
+	margin-top: 4%;
+}
+
+.register .nav-tabs .nav-link:hover {
+	border: none;
+}
+
+.text-align {
+	margin-top: -3%;
+	margin-bottom: -9%;
+
+	padding: 10%;
+	margin-left: 30%;
+}
+
+.form-new {
+	margin-right: 22%;
+	margin-left: 20%;
+}
+
+.btnForgetPwd {
+	cursor: pointer;
+	margin-right: 5%;
+	color: #f8f9fa;
+}
+
+/* fond du formulaire */
+.register {
+	background: -webkit-linear-gradient(left, #7db897, #1a4652);
+	margin-top: 3%;
+	padding: 3%;
+	border-radius: 2.5rem;
+}
+
+.nav-tabs .nav-link {
+	border: 1px solid transparent;
+	border-top-left-radius: .25rem;
+	border-top-right-radius: .25rem;
+	color: white;
+}

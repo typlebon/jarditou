@@ -1,0 +1,15 @@
+@charset "ISO-8859-1";
+header {
+	color:white;
+	background-color: #C0C0C0;
+	font-style: oblique;
+}
+nav {
+  text-align:center;
+  color:white;
+  background:#C0C0C0 ;
+  border-radius:100%;
+  border:1px solid #C0C0C0 ;
+  max-width:240px;
+  max-height: 240px;
+}

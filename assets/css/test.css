@@ -1,0 +1,153 @@
+/* DEBUT CODE NAVBAR */
+.header{
+background-image: url('https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_1280.jpg');
+background-repeat: no-repeat; 
+background-attachment: fixed; /*image reste fixe */
+height: 800px;
+}
+.logo-title{
+	color: #fff;
+font-family: Georgia, serif;
+font-weight:400;
+letter-spacing: 5px;
+text-transform: uppercase;
+}
+.top-title{
+	text-align: center;
+	color: #fff;
+	text-transform: uppercase; /*text-transform définit la façon d'utiliser les lettres capitales pour le texte d'un élément*/
+	margin-top: 150px;
+}
+.top-title h1{
+font-family: Georgia, serif;
+}
+.menu{
+padding: 50px;
+padding-top: 200px;
+box-sizing: border-box;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+background:#cfc487;
+height: 510px;
+opacity:1;
+position: relative;
+z-index: 5;
+transition: background .3s linear;
+/*-webkit-transition: background .3s linear; /*webkit-transition est une caractéristique média booléenne non-standard qui permet d'indiquer si les transitions CSS 
+-moz-transition: background .3s linear;
+-ms-transition: background .3s linear;
+-o-transition: background .3s linear; */
+} 
+.menu a:hover{ /*empêche affichage de la barre sous le texte */
+text-decoration: none;
+} 
+.menu li{ /*empêche affichage des boutons à coté du texte du menu */
+list-style: none;
+} 
+.menu li a{
+color: #fff;
+display: block;
+font-family: Georgia, serif;
+font-weight:800;
+font-size: 25px;
+position: relative;
+text-transform: uppercase; /*écriture des lettres en majuscule */
+}
+.mh-1:hover .menu{
+background: #ddd;
+z-index: 12;
+overflow: hidden;
+} 
+.menu a:hover::before {
+left: -20px;
+width: 15px;
+}
+.menu a::before{
+background: #fff;
+bottom: 6px;
+content: "";
+display: block;
+left: 5px;
+height: 1px;
+position: absolute;
+transition: all .2s ease-out;
+-webkit-transition: all .2s ease-out;
+-moz-transition: all .2s ease-out;
+-ms-transition: all .2s ease-out;
+-o-transition: all .2s ease-out;
+width: 0;
+}
+
+/* MENU PAGE BASSE */
+.myheader{
+	height: 200px;
+	/*background-color: #ccc; */
+}
+.myheader .menu{
+padding: 50px;
+padding-top:10px;
+height: 130px;
+position: fixed;
+top: 0;
+width: 30%;
+}
+.myheader .header-left{
+position: fixed;
+top: 0;
+background-color:#151724;
+width: 60%;
+padding: 14px;
+height: 130px;
+}
+.myheader .menu li a{
+font-size: 15px;
+}
+.myheader .top-title{
+    position: fixed;
+    top: -120px;
+    text-align: center;
+    left: 30%;
+}
+.myheader .top-title h1{
+	font-size:35px;
+}	
+.myheader .logo-title{
+	font-size: 14px;
+	letter-spacing: 2px;
+}  
+/* EFFECTS
+***************/
+
+/*
+.glow {
+  text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    -webkit-transition: text-shadow 1s linear;
+       -moz-transition: text-shadow 1s linear;
+         -o-transition: text-shadow 1s linear;
+            transition: text-shadow 1s linear;
+}
+
+.glow.in {
+  text-shadow: 
+    0.025em 0.025em 0.025em rgba(0, 0, 0, 0.8),
+    0 0 0.5em rgba(255, 255, 255, 0.3);
+}
+
+.fade {
+  opacity: 0;
+    -webkit-transition: opacity 1s linear;
+       -moz-transition: opacity 1s linear;
+         -o-transition: opacity 1s linear;
+            transition: opacity 1s linear;
+}
+
+.fade.in {
+  opacity: 1;
+}
+
+
+footer{
+	margin-top:800px;
+} */
+ /* FIN CODE NAVBAR */
+
