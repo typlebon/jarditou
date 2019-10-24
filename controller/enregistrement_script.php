@@ -46,8 +46,10 @@ if (isset($_POST['submit'])) {
       $connexion->execute(); // exécution de la requête 
       $result = $connexion->fetch(PDO::FETCH_OBJ); // retourne valeur de $connexion sous forme d'objet 
       $mdptest = password_verify($mdp, $result->mdp);
+      // password_verify = Vérifie qu'un mot de passe correspond à un hachage
       if ($mdptest) {
          $_SESSION["nom"] = $result->nom;
+         // définition des variables des sessions 
          $_SESSION["prenom"] = $result->prenom;
          $_SESSION["pseudo"] = $result->pseudo;
          $_SESSION["mail"] = $mail;

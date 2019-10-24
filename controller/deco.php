@@ -3,9 +3,9 @@
 // encore et encore et encore et encore 
 if (isset($_POST['signout'])) {
     $_SESSION["mail"] = array();
+    //transforme variable de session mail en tableau
     $_SESSION["mdp"] = array();
-
-
+    // transforme variable de session "mdp" en tableau 
 
 
     // supression des variable de session

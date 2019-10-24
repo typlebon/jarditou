@@ -1,20 +1,24 @@
 <?php
 include "connexion_bdd.php";
 
+//REQUETE POUR LE DETAIL DES PRODUITS
 $db = connexionBase(); // Appel de la fonction de connexion
 $pro_id = $_GET["pro_id"];
-// d'abord écrire les varibale et après voir pour la concaténation
 $requete = "SELECT * FROM produits WHERE pro_id=:pro_id";
+// selectionne tout les éléments de la table produit en fonction de leur ID
 $result = $db->prepare($requete);
 // requête préparé
 $result->bindValue(":pro_id", $_GET["pro_id"], PDO::PARAM_INT);
+//bindValue — Associe une valeur à un paramètre 
 $result->execute();
 //obligatoire pour requête préparé
-$produit = $result->fetch(PDO::FETCH_OBJ);
-$dateModif = new DateTime($produit->pro_d_modif);
-$dateAjout = new DateTime($produit->pro_d_ajout);
 
-//catégorie
+//REQUETE POUR MODIFICATION DE L'HEURE EN FRANCAIS
+$produit = $result->fetch(PDO::FETCH_OBJ);
+$dateModif = new DateTime($produit->pro_d_modif); // définition de la variable de la date de modif
+$dateAjout = new DateTime($produit->pro_d_ajout); // définition de la variable de la date d'ajout
+
+//REQUETE POUR LA CATEGORIE 
 $requete = "SELECT * FROM categories ORDER BY cat_nom";
 $result = $db->query($requete);
 $categories = $result->fetchAll(PDO::FETCH_OBJ);
@@ -24,6 +28,7 @@ $categories = $result->fetchAll(PDO::FETCH_OBJ);
 
 //TABLEAU D'ERREUR
 $erreur = array();
+//DECLARATION DES REGEX
 $regexRef = '/^[A-Za-z ÁÀÂÄÃÅÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝÆÇáàâäãåéèêëíìîïñóòôöõúùûüýÿæç\'0-9,\.\-\_]{1,10}+$/';
 // mettre "/" pour avoir uniquement le caractère voulu
 $regexLibelle = '/^[0-9-a-zA-Zàáâãäåçèéêëìíîïðòóôõöùúûüýÿ\-, .]+$/';
@@ -37,11 +42,11 @@ $regexCouleur = '/^[0-9-a-zA-Zàáâãäåçèéêëìíîïðòóôõöùúûü
 //Si la valeur du submit est présent 
 //var_dump($_POST);
 if (isset($_POST['submit']))
-// Name sur le submit
+// submit correspond au name dans le formulaire 
 {
     //REFERENCE
     if (!empty($_POST['pro_ref']))
-    //Si champs pas vide on enchaine sur l'autre if
+    //Si champs n'est pas vide on enchaine sur l'autre if
     {
         if (preg_match($regexRef, $_POST['pro_ref']))
         //Si la regex passe
@@ -144,6 +149,7 @@ if (isset($_POST['submit']))
         //si tableau d'erreur est égal à 0
         //si tableau d'erreur est vide, on envoi le formulaire 
         $requete =
+        // La commande UPDATE permet d’effectuer des modifications sur des lignes existantes
         "UPDATE produits 
      SET
      pro_ref = :pro_ref,
@@ -178,9 +184,8 @@ if (isset($_POST['submit']))
         $result->closeCursor();
         
         move_uploaded_file($_FILES["file"]["tmp_name"], "../assets/img/jarditou_photo/" . $pro_id . "." . $file);
-        
+        // permet l'upload d'un fichier
         header('Location: ../view/liste.php');
         exit;
     }
-    //header("Location:detail_produit.php?.$_GET['pro_id']");
 }

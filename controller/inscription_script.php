@@ -119,7 +119,6 @@ if (isset($_POST['submit'])) {
       //       $_SESSION['login'] = $login;
       //       $_SESSION["pseudo"] = $pseudo;
       //       $_SESSION['password'] = $password;
-      //si tableau d'erreur est égal à 0
       //si tableau d'erreur est vide, on envoi le formulaire 
       $requete = "INSERT INTO users (
       nom,
