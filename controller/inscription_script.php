@@ -127,8 +127,7 @@ if (isset($_POST['submit'])) {
       mail,
       identifiant,
       mdp,
-      inscription,
-      derniere_connexion) 
+      inscription) 
       VALUES(
       :nom,
       :prenom,
@@ -136,7 +135,6 @@ if (isset($_POST['submit'])) {
       :mail,
       :identifiant,
       :mdp,
-      NOW(),
       NOW())";
 
       $result = $db->prepare($requete);

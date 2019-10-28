@@ -1,14 +1,14 @@
 <?php
+include "../controller/mot_de_passe_script.php";
 include "header.php";
-include "../controller/enregistrement_script.php";
-?>
 
+?>
     <div class="container register">
         <div class="row">
             <div class="col-md-12">
                 <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Connexion</a>
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Réinitialisation du mot de passe:</a>
                     </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
@@ -21,12 +21,7 @@ include "../controller/enregistrement_script.php";
                                         <span><?= isset($erreur['mail']) ? $erreur['mail'] : '' ?></span>
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" name="mdp" class="form-control" placeholder="Votre mot de passe*" />
-                                        <span><?= isset($erreur['mdp']) ? $erreur['mdp'] : '' ?></span>
-                                    </div>
-                                    <div class="form-group">
                                         <input type="submit" name="submit" class="btnContactSubmit" value="Login" />
-                                        <a href="mot_de_passe.php" class="btnForgetPwd" value="Login">Mot de passe oublié?</a> 
                                     </div>
                                 </form>
                             </div>

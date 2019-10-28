@@ -47,6 +47,7 @@ if (isset($_POST['submit'])) {
       $result = $connexion->fetch(PDO::FETCH_OBJ); // retourne valeur de $connexion sous forme d'objet 
       $mdptest = password_verify($mdp, $result->mdp);
       // password_verify = Vérifie qu'un mot de passe correspond à un hachage
+
       if ($mdptest) {
          $_SESSION["nom"] = $result->nom;
          // définition des variables des sessions 
@@ -57,10 +58,33 @@ if (isset($_POST['submit'])) {
          $_SESSION["identifiant"] = $result->identifiant;
          $_SESSION["inscription"] = $result->inscription;
          $_SESSION["role"] = $result->Role;
+         // requête permettant de récupére la date de la dernière connexion
+
+
+         $date1 = "UPDATE users SET derniere_connexion = NOW() WHERE mail=:mail";
+         $date = $db->prepare($date1);
+         // préparation de la requete 
+         $date->bindValue(":mail", $mail, PDO::PARAM_STR);
+         // bindValue — Associe une valeur à un paramètre 
+         $date->execute(); // exécution de la requête 
+
          header("Location: ../view/Jarditou-officiel.php");
          exit;
       } else {
-         echo "Attention je ne te connais pas!";
+         if ($result->tentatives < 3) {
+            echo "Mot de passe incorrect (attention 3 tentatives maximum!)";
+            $result->tentatives += 1;
+            // si la connexion ne se fait pas, enregistre le nombre de tentatives de mot de passe
+            $date1 = "UPDATE users SET tentatives= $result->tentatives WHERE mail=:mail";
+            $date = $db->prepare($date1);
+            // préparation de la requete 
+            $date->bindValue(":mail", $mail, PDO::PARAM_STR);
+            // bindValue — Associe une valeur à un paramètre 
+            $date->execute(); // exécution de la requête 
+         } else {
+            header("Location: ../view/compte_bloque.php");
+            exit;
+         }
       }
    }
 }

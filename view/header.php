@@ -46,7 +46,7 @@ include '../controller/deco.php';
 											<div class="modal-content">
 												<div class="modal-header">
 													<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-													<h4 class="modal-title" id="myModalLabel">Vos informations personnels :</h4>
+													<h4 class="modal-title" id="myModalLabel">Vos informations personnelles :</h4>
 												</div>
 												<div class="modal-body">
 													<ul class="list-group">
@@ -80,7 +80,7 @@ include '../controller/deco.php';
 									// si un id est trouvé dans la base de données, on affiche son identifiant
 									// sinon on affiche connexion et inscription
 									?>
-									<p>Bonjour <?= $_SESSION['identifiant'] ?></p>
+									<p>Bonjour <?= $_SESSION['prenom'] ?></p>
 									<form method=POST action="">
 										<input type="submit" class="btn btn-warning" name="signout" value="Déconnexion">
 										<!-- <button type="submit" class="" name="submit" title="Aller à la cible" value="oui"><a href="../controller/deconnexion.php" title="jarditou">Oui</a></button> -->
