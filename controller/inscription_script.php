@@ -148,7 +148,7 @@ if (isset($_POST['submit'])) {
       $result->bindValue(":identifiant", $login, PDO::PARAM_STR);
       $result->bindValue(":mdp", $password, PDO::PARAM_STR);
       $result->execute();
-      header("Location: ../view/Jarditou-officiel.php");
+      header("Location: ../view/Jarditou-officiel.php?inscription_success=1");
        
    }
 }

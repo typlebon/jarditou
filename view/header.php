@@ -18,6 +18,13 @@ include '../controller/deco.php';
 <body data-spy="scroll" data-target="#navbar-example">
 
 	<header>
+	<?php if (isset($_GET['inscription_success']) && $_GET['inscription_success'] == 1) { ?>
+           <div class='alert alert-success'>
+               <p>Votre inscription a bien été pris en compte!<p>
+           </div>
+           <?php
+       }
+       ?>
 		<!-- Début header -->
 		<div class="container-fluid">
 			<div class="row">
@@ -35,7 +42,7 @@ include '../controller/deco.php';
 								<a class="nav-item nav-link" href="liste.php" title="liste produits bases de données"><button type="button" class="btn btn-outline-secondary" class="text-left">PRODUITS</button></a>
 								<?php
 								if (isset($_SESSION["role"])) {
-									// administrateur a accès à tout
+									// client a accès à rien
 									// ce qui bloque l'accès à tout autre utilisateur 
 									?>
 									<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#myModal">VOTRE COMPTE </button>

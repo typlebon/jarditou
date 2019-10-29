@@ -49,6 +49,7 @@ if (isset($_POST['submit'])) {
       // password_verify = Vérifie qu'un mot de passe correspond à un hachage
 
       if ($mdptest) {
+         // si mot de passe correct on déclare les variables 
          $_SESSION["nom"] = $result->nom;
          // définition des variables des sessions 
          $_SESSION["prenom"] = $result->prenom;
@@ -58,9 +59,8 @@ if (isset($_POST['submit'])) {
          $_SESSION["identifiant"] = $result->identifiant;
          $_SESSION["inscription"] = $result->inscription;
          $_SESSION["role"] = $result->Role;
+
          // requête permettant de récupére la date de la dernière connexion
-
-
          $date1 = "UPDATE users SET derniere_connexion = NOW() WHERE mail=:mail";
          $date = $db->prepare($date1);
          // préparation de la requete 
