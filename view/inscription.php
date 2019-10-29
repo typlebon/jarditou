@@ -2,11 +2,6 @@
 //session_start();
 include "header.php";
 include "../controller/inscription_script.php";
-// if (isset($_POST['submit'])) {
-    // var_dump($_SESSION);
-//     var_dump($_POST);
-//     var_dump($erreur);
-// }
 ?>
 
 <div id="login">
@@ -71,4 +66,6 @@ include "../controller/inscription_script.php";
     </div>
 </div>
 </div>
-</body>
+<?php
+include "footer.php";
+?>
